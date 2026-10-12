@@ -1,0 +1,33 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "honest-backtest"
+version = "0.1.0"
+description = "Overfitting-aware readiness gates, deflated Sharpe, cost model and look-ahead audit for trading strategies"
+readme = "README.md"
+license = { text = "MIT" }
+requires-python = ">=3.9"
+dependencies = ["numpy>=1.21", "pandas>=1.3"]
+classifiers = [
+  "License :: OSI Approved :: MIT License",
+  "Programming Language :: Python :: 3",
+  "Topic :: Office/Business :: Financial :: Investment",
+]
+
+[project.optional-dependencies]
+test = ["pytest>=7"]
+
+[project.urls]
+Homepage = "https://botlab.org.uk"
+
+[project.scripts]
+honest-backtest = "honest_backtest.cli:main"
+
+[tool.setuptools]
+packages = ["honest_backtest"]
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
